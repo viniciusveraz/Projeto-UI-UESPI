@@ -1,0 +1,53 @@
+/* ===========================================================================
+   1. TOKENS — identidade Netinho.io preservada
+   =========================================================================== */
+:root{
+  --ink:        #2D3142;
+  --ink-soft:   #5B6072;
+  --ink-faint:  #9AA0AE;
+  --coral:      #EF476F;
+  --paper:      #FAFAFA;
+  --line:       #EAEAEA;
+  --mar:        #0E5C73;
+  --vento:      #3FB8C4;
+  --areia:      #E4D6BB;
+  --alerta:     #E4572E;
+  --glass-bg:      rgba(255,255,255,.55);
+  --glass-bg-deep: rgba(255,255,255,.72);
+  --glass-line:    rgba(255,255,255,.75);
+  --glass-shadow:  0 24px 60px -18px rgba(14,92,115,.35), 0 2px 8px rgba(45,49,66,.06);
+  --blur:          28px;
+  --r-sm: 12px; --r-md: 18px; --r-lg: 26px; --r-full: 999px;
+  --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  min-height:100svh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+.ambiente{ position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; }
+.ambiente span{
+  position:absolute; border-radius:50%; filter:blur(70px); opacity:.30;
+  animation:deriva 26s ease-in-out infinite alternate;
+}
+.ambiente span:nth-child(1){ width:44vmax; height:44vmax; top:-14vmax; right:-10vmax;
+  background:radial-gradient(circle,var(--vento),transparent 68%); }
+.ambiente span:nth-child(2){ width:38vmax; height:38vmax; bottom:-16vmax; left:-12vmax;
+  background:radial-gradient(circle,var(--areia),transparent 68%); animation-delay:-9s; }
+.ambiente span:nth-child(3){ width:30vmax; height:30vmax; top:38%; left:52%;
+  background:radial-gradient(circle,var(--coral),transparent 70%); opacity:.13; animation-delay:-16s; }
+@keyframes deriva{ to{ transform:translate3d(4vmax,-3vmax,0) scale(1.12); } }
+
+::selection{ background:var(--coral); color:#fff; }
+:focus-visible{ outline:2px solid var(--coral); outline-offset:3px; border-radius:6px; }
